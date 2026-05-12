@@ -1,0 +1,4 @@
+﻿User-agent: *
+Allow: /
+
+Sitemap: https://ebinjohnson-web.github.io/anchor-church-london/sitemap.xml
