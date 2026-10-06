@@ -1,9 +1,8 @@
+import { church } from "../lib/church";
 import Link from "next/link";
 import Image from "next/image";
 import { assetPath } from "../lib/assets";
 
-const mapUrl =
-  "https://www.google.com/maps/search/?api=1&query=2179%20Highbury%20Ave%20N%2C%20London%2C%20ON%20N5X%204N4%2C%20Canada";
 
 export default function Footer() {
   return (
@@ -23,23 +22,24 @@ export default function Footer() {
 
           <span>
             <strong>Anchor Church</strong>
-            <small>Anchored in Jesus · Growing as family</small>
+            <small>Anchored in Jesus. Sharing His hope in London and beyond.</small>
           </span>
         </Link>
 
         <nav className="footer-links" aria-label="Footer navigation">
           <Link href="/about">About</Link>
           <Link href="/visit">I&apos;m New</Link>
+          <Link href="/next-steps">Next Steps</Link>
           <Link href="/ministries">Ministries</Link>
+          <Link href="/opportunities">Opportunities</Link>
           <Link href="/church-life">Church Life</Link>
           <Link href="/contact">Contact</Link>
         </nav>
 
         <div className="footer-contact">
-          <a href={mapUrl} target="_blank" rel="noreferrer">
-            2179 Highbury Ave N
-            <br />
-            London, ON N5X 4N4
+          <p>{church.service}</p>
+          <a href={church.mapUrl} target="_blank" rel="noreferrer">
+            {church.venue}<br />{church.street}<br />{church.city}
           </a>
 
           <a href="mailto:anchorchurchlc1@gmail.com">

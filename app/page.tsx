@@ -1,12 +1,16 @@
 import type { ReactNode } from "react";
+import type { Metadata } from "next";
+import { church } from "./lib/church";
 import Image from "next/image";
 import Link from "next/link";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { assetPath } from "./lib/assets";
 
-const mapUrl =
-  "https://www.google.com/maps/search/?api=1&query=2179%20Highbury%20Ave%20N%2C%20London%2C%20ON%20N5X%204N4%2C%20Canada";
+export const metadata: Metadata = {
+  title: { absolute: "Anchor Church London | Christian Church in London Ontario" },
+  description: "Discover Anchor Church London, a Christian church family in London, Ontario. Learn about Sunday worship, explore faith, and plan your first visit.",
+};
 
 type IconName = "visit" | "worship" | "prayer" | "bible" | "family" | "connect";
 
@@ -30,12 +34,12 @@ function InterestIcon({ name }: { name: IconName }) {
 }
 
 const interests: Array<{ href: string; icon: IconName; title: string; copy: string }> = [
-  { href: "/visit", icon: "visit", title: "Planning a Visit", copy: "Everything you need for your first Sunday" },
-  { href: "/ministries", icon: "worship", title: "Worshipping Together", copy: "Gather with us to honour Jesus Christ" },
-  { href: "/contact", icon: "prayer", title: "Prayer & Care", copy: "Share a need and let us stand with you" },
-  { href: "/ministries", icon: "bible", title: "Growing in the Word", copy: "Know Jesus through Scripture and teaching" },
-  { href: "/church-life", icon: "family", title: "Finding Family", copy: "Experience life together across generations" },
-  { href: "/contact", icon: "connect", title: "Connecting with Us", copy: "Start a conversation with Anchor Church" },
+  { href: "/visit", icon: "visit", title: "Plan Your Visit", copy: "Everything you need for your first Sunday" },
+  { href: "/next-steps#explore-jesus", icon: "bible", title: "Explore Jesus", copy: "Bring your questions and discover the good news" },
+  { href: "/next-steps#baptism", icon: "worship", title: "Ask About Baptism", copy: "Understand baptism and the preparation involved" },
+  { href: "/next-steps#groups", icon: "family", title: "Ask About Groups", copy: "Learn Scripture, pray, and grow with others" },
+  { href: "/next-steps#serving", icon: "prayer", title: "Ask About Serving", copy: "Find ways to offer your time and abilities" },
+  { href: "/opportunities", icon: "connect", title: "Enquire About Internships", copy: "Explore potential opportunities and practical experience" },
 ];
 
 export default function Home() {
@@ -44,31 +48,57 @@ export default function Home() {
       <a className="skip-link" href="#main">Skip to content</a>
       <Header />
       <main id="main" className="cnbc-home">
-        <section className="cnbc-hero" aria-label="Welcome to Anchor Church London">
-          <Image src={assetPath("/images/family-banner.jpg")} alt="Anchor Church London family moments" fill sizes="100vw" priority className="cnbc-hero-image" />
-          <div className="cnbc-hero-wash" />
-          <div className="cnbc-hero-content page-shell">
-            <div className="cnbc-hero-title">
-              <p>A church family in London, Ontario</p>
-              <h1>Anchored in Jesus.</h1>
+        <section className="home-photo-intro" aria-labelledby="home-welcome-title" style={{ backgroundImage: `url("${assetPath("/images/wide-congregation.jpg")}")` }}>
+          <div className="home-congregation-photo">
+            <Image src={assetPath("/images/wide-congregation.jpg")} alt="Anchor Church London congregation gathered together" width={2000} height={900} sizes="100vw" priority />
+          </div>
+          <div className="home-photo-corners" aria-hidden="true" />
+          <div className="home-photo-heading page-shell">
+            <p>A Church Family</p>
+            <h1 id="home-welcome-title">Anchored in Jesus</h1>
+          </div>
+          <div className="home-sunday-info home-photo-service">
+            <p className="home-sunday-time">{church.service}</p>
+            <p className="home-sunday-location"><strong>{church.venue}</strong><br />{church.street}<br />{church.city}</p>
+          </div>
+        </section>
+
+        <section className="home-sunday-invitation" aria-label="Plan your Sunday visit">
+          <div className="page-shell home-sunday-grid">
+            <div className="home-welcome-buttons">
+              <Link className="home-visit-button" href="/visit">Plan Your Visit <span aria-hidden="true">→</span></Link>
+              <a className="home-directions-button" href={church.mapUrl} target="_blank" rel="noreferrer">Get Directions <span aria-hidden="true">↗</span></a>
             </div>
-            <div className="cnbc-hero-action">
-              <span>Come as you are. There is a place for you here.</span>
-              <Link href="/visit">Plan your visit <b aria-hidden="true">→</b></Link>
+            <p className="home-invitation-copy">Discover the hope of Jesus and a church family where you can grow in faith. Whether you are exploring Christianity, returning to church, or looking for a church home, you are welcome here.</p>
+          </div>
+        </section>
+
+        <section className="pastor-welcome-section" aria-labelledby="pastor-welcome-title">
+          <div className="pastor-welcome-shape" aria-hidden="true" />
+          <div className="page-shell pastor-welcome-grid">
+            <div className="pastor-welcome-heading home-pastor-heading">
+              <div className="home-pastor-portrait"><Image src={assetPath("/images/pastor-sudhir.jpg")} alt="Pastor Sudhir Basumatary, Founder and Lead Pastor of Anchor Church London" fill sizes="(max-width: 820px) 200px, 240px" /></div>
+              <p>A welcome from</p>
+              <h2 id="pastor-welcome-title">Pastor Sudhir</h2>
+              <span>Founder and Lead Pastor</span>
+            </div>
+            <div className="pastor-welcome-copy">
+              <p>Welcome to Anchor Church London. My prayer is that you will discover the hope of Jesus and find a church family where you can grow in faith and build meaningful friendships. Whether you are exploring faith or looking for a church home, your questions are welcome. Join us this Sunday—I look forward to meeting you.</p>
+              <p className="pastor-welcome-signature">Pastor Sudhir Basumatary</p>
+              <Link className="cnbc-text-link" href="/visit">Plan Your Visit →</Link>
             </div>
           </div>
-          <div className="cnbc-slider-dots" aria-hidden="true"><span className="active" /><span /><span /></div>
         </section>
 
         <section className="interest-heading">
           <div className="interest-shape" aria-hidden="true" />
-          <h2>I&apos;m <strong>interested</strong> in...</h2>
+          <div><h2>Take your <strong>next step.</strong></h2><p>Bring your questions, build friendships, and discover ways to participate in church life. We would love to help you find your next step.</p></div>
         </section>
 
         <section className="interest-section" aria-label="Explore Anchor Church">
           <div className="interest-grid page-shell">
             {interests.map((item) => (
-              <Link className="interest-card reveal" href={item.href} key={item.title}>
+              <Link className="interest-card" href={item.href} key={item.title}>
                 <InterestIcon name={item.icon} />
                 <h3>{item.title}</h3>
                 <p>{item.copy}</p>
@@ -81,20 +111,15 @@ export default function Home() {
           <div className="mission-shape mission-shape-one" aria-hidden="true" />
           <div className="mission-shape mission-shape-two" aria-hidden="true" />
           <div className="mission-content">
-            <h2>With confidence we say...<strong>It&apos;s all about Jesus.</strong></h2>
+            <h2>Come as you are.<strong>Join us this Sunday.</strong></h2>
             <div className="mission-copy">
-              <p><b>Jesus Christ is our Anchor.</b><br />Our hope is secure in who He is and what He has done.</p>
-              <p><b>Jesus&apos; Gospel is our Message.</b><br />The wonderful news of God&apos;s grace is for every person.</p>
-              <p><b>Jesus&apos; Mission is our Mandate.</b><br />We are called to love God, love people, and make disciples.</p>
-              <p>Anchor Church London is a Christian church family that worships together, grows together, and shares the good news of Jesus Christ. Whether you are new to church, returning after time away, or searching for a church family, you are welcome here.</p>
-              <p>We believe the local church is God&apos;s family at work—praying, serving, encouraging, and helping people grow in faith together.</p>
-              <p>Because, after all, it&apos;s really not about us.</p>
-              <p>Together, anchored in Christ.</p>
+              <p>Come as you are. Our Sunday service runs from 10:45 a.m. to 12:30 p.m., and parking is available at the rear of the building. We look forward to meeting you.</p>
+              <p>{church.venue}<br />{church.street}<br />{church.city}</p>
             </div>
             <p className="mission-signature">Anchor Church London</p>
             <div className="mission-actions">
-              <Link className="cnbc-button" href="/about">Learn more about us</Link>
-              <a className="cnbc-text-link" href={mapUrl} target="_blank" rel="noreferrer">Get directions <span aria-hidden="true">→</span></a>
+              <Link className="cnbc-button" href="/visit">Plan Your Visit</Link>
+              <a className="cnbc-text-link" href={church.mapUrl} target="_blank" rel="noreferrer">Get directions <span aria-hidden="true">→</span></a>
             </div>
           </div>
         </section>

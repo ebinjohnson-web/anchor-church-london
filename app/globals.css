@@ -936,3 +936,172 @@ body { background: var(--cream); color: #202538; }
   .footer-bottom { min-height: 82px; padding-block: 20px; flex-direction: column; align-items: flex-start; justify-content: center; gap: 6px; }
   .page-hero h1 { font-size: clamp(3.1rem,15vw,4.5rem); }
 }
+
+/* Original homepage design with current Sunday details and pastor welcome. */
+.hero-sunday-details { display: grid; gap: 3px; margin-top: 17px; color: #fff; font-size: .83rem; line-height: 1.5; letter-spacing: 0; text-transform: none; }
+.hero-sunday-details strong { font-weight: 700; }
+.hero-visit-actions { display: flex; flex-wrap: wrap; gap: 12px 28px; }
+.hero-visit-actions a { min-height: 44px; display: inline-flex; align-items: center; }
+.pastor-welcome-section { position: relative; overflow: hidden; padding-block: 52px; background: #f5f5f4; color: var(--navy); }
+.pastor-welcome-shape { position: absolute; width: 600px; height: 250px; left: -180px; top: 20px; transform: rotate(-14deg); border-radius: 50%; background: rgba(26,53,111,.045); pointer-events: none; }
+.pastor-welcome-grid { position: relative; display: grid; grid-template-columns: .8fr 1.7fr; gap: 70px; align-items: center; }
+.pastor-welcome-heading > p { margin: 0 0 8px; font-size: .86rem; }
+.pastor-welcome-heading h2 { margin: 0 0 12px; font-size: clamp(1.8rem,3vw,2.6rem); font-style: italic; font-weight: 800; line-height: 1.15; }
+.pastor-welcome-heading > span { font-size: .78rem; color: #52617d; }
+.pastor-welcome-copy > p:first-child { margin-top: 0; font-size: 1rem; line-height: 1.7; color: #202538; }
+.pastor-welcome-signature { margin: 20px 0; font-family: "Segoe Script","Brush Script MT",cursive; font-size: 1.35rem; }
+.pastor-welcome-copy > a { display: inline-flex; align-items: center; min-height: 44px; }
+.footer-contact p { margin: 0; }
+@media (max-width: 820px) {
+  .cnbc-hero,.cnbc-hero-content { min-height: 535px; }
+  .pastor-welcome-grid { grid-template-columns: 1fr; gap: 24px; }
+  .pastor-welcome-section { padding-block: 36px; }
+  .mobile-menu { overflow-y: auto; }
+  .mobile-menu-footer { flex-wrap: wrap; gap: 14px; }
+}
+@media (max-width: 560px) {
+  .hero-sunday-details { font-size: .8rem; }
+  .cnbc-hero-title { padding-right: 18px; }
+  .hero-visit-actions { gap: 4px 20px; }
+}
+
+/* Pastor-supplied content in the existing visual system. */
+.cnbc-hero-action > span { max-width: 560px; line-height: 1.6; }
+.interest-heading > div:last-child { position: relative; max-width: 720px; padding: 32px 24px; text-align: center; }
+.interest-heading p { margin: 14px 0 0; font-size: .9rem; line-height: 1.6; color: var(--muted); }
+.mission-section { min-height: 0; }
+.content-section { padding-block: 64px; scroll-margin-top: 140px; }
+.content-section h2 { margin: 0 0 28px; font-size: clamp(1.8rem,3vw,2.7rem); line-height: 1.15; color: var(--navy); }
+.content-section h3,.story-body h3 { font-size: 1.3rem; font-weight: 800; color: var(--navy); }
+.content-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+.content-columns p,.pastor-welcome-copy p { font-size: 1rem; line-height: 1.75; }
+.pastor-welcome-copy blockquote { margin: 24px 0; padding-left: 20px; border-left: 3px solid var(--orange); font-style: italic; line-height: 1.75; }
+.content-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px; }
+.enquiry-note { font-size: .8rem !important; line-height: 1.6 !important; color: var(--muted); }
+.contact-form-wrap > .enquiry-note { font-family: var(--sans); margin-bottom: 24px; }
+.visitor-faq { border-top: 1px solid var(--line-dark); }
+.visitor-faq details { border-bottom: 1px solid var(--line-dark); padding-block: 16px; }
+.visitor-faq summary { cursor: pointer; min-height: 44px; padding-block: 10px; font-weight: 800; color: var(--navy); }
+.visitor-faq details p { max-width: 800px; margin: 12px 0; line-height: 1.75; }
+.section-links { display: flex; flex-wrap: wrap; gap: 12px 28px; padding-block: 28px; border-bottom: 1px solid var(--line-dark); }
+.section-links a { display: inline-flex; align-items: center; min-height: 44px; color: var(--navy); font-weight: 700; border-bottom: 1px solid var(--navy); }
+.next-step-sections > section { border-top: 1px solid var(--line-dark); }
+.scripture-reference { font-size: .8rem !important; color: var(--muted); }
+.ministry-description p { margin: 0 0 18px; }
+.photos-coming .content-actions { grid-column: 2; }
+.footer-brand small { max-width: 260px; line-height: 1.5; }
+a:focus-visible,summary:focus-visible { outline: 3px solid var(--orange); outline-offset: 4px; }
+@media (max-width: 820px) {
+  .content-columns { grid-template-columns: 1fr; gap: 28px; }
+  .content-section { padding-block: 40px; scroll-margin-top: 110px; }
+  .photos-coming .content-actions { grid-column: auto; }
+  .ministry-description { grid-column: 3; }
+}
+@media (max-width: 560px) {
+  .cnbc-hero-action > span { max-width: calc(100% - 12px); }
+  .cnbc-hero-action a { font-size: .86rem; }
+}
+
+/* Accessible disclosure navigation, using the original header design. */
+.nav-group { position: relative; display: flex; align-items: stretch; }
+.desktop-nav > .nav-group { border-left: 1px solid #c8cfdf; }
+.desktop-nav .nav-primary { border-left: 0; padding-inline: 12px; }
+.submenu-toggle { display: grid; place-items: center; width: 26px; flex-shrink: 0; border: 0; background: transparent; color: var(--navy); cursor: pointer; }
+.submenu-toggle span { font-size: 1.1rem; transition: transform 180ms ease; }
+.submenu-toggle[aria-expanded="true"] span { transform: rotate(180deg); }
+.submenu-toggle:hover { background: #f1f5fa; }
+.submenu-toggle:focus-visible { outline: 3px solid var(--orange); outline-offset: -3px; }
+.nav-submenu { position: absolute; top: 100%; left: 0; z-index: 102; width: 295px; padding: 8px 0; border-top: 3px solid var(--orange); background: #fff; box-shadow: 0 12px 28px rgba(15,33,78,.18); }
+.nav-submenu[hidden] { display: none !important; }
+.desktop-nav .nav-submenu a,.nav-pending { display: flex; align-items: flex-start; flex-direction: column; height: auto; min-height: 44px; padding: 12px 18px; border: 0; font-size: .86rem; line-height: 1.5; text-align: left; font-weight: 600; text-transform: none; letter-spacing: 0; }
+.nav-pending { color: #69738a; }
+.nav-pending small { font-size: .68rem; font-weight: 400; }
+#our-story { scroll-margin-top: 140px; }
+@media (max-width: 1080px) {
+  .mobile-menu nav { align-content: start; }
+  .mobile-menu .nav-group { display: flex; flex-wrap: wrap; }
+  .mobile-menu .nav-primary { flex: 1; font-size: 1.65rem; padding: 14px 0; }
+  .mobile-menu .submenu-toggle { width: 48px; min-height: 58px; border-bottom: 1px solid #d6dce8; }
+  .mobile-menu .nav-submenu { position: static; width: 100%; padding: 8px 0 12px 16px; border-top: 0; border-left: 3px solid var(--orange); box-shadow: none; background: #f6f8fc; }
+  .mobile-menu .nav-submenu a { min-height: 44px; padding: 12px 16px; border: 0; font-size: 1rem; font-weight: 600; }
+  .mobile-menu .nav-pending { padding: 12px 16px; font-size: 1rem; }
+}
+@media (max-width: 820px) { #our-story { scroll-margin-top: 110px; } }
+
+/* Stretch the new disclosure wrappers to the original desktop header height. */
+.desktop-nav { align-items: stretch; height: 100%; }
+.desktop-nav > .nav-group { height: 100%; }
+.desktop-nav .nav-primary { display: flex; align-items: center; justify-content: center; height: 100%; white-space: nowrap; }
+.desktop-nav .submenu-toggle { height: 100%; }
+.desktop-nav .submenu-toggle span { line-height: 1; }
+
+/* Real homepage photographs supplied by the church. */
+.home-pastor-portrait { position: relative; width: min(240px,100%); aspect-ratio: 3 / 4; margin: 0 0 24px; overflow: hidden; border-radius: 4px; background: #e5e8ed; box-shadow: 0 8px 24px rgba(20,34,79,.12); }
+.home-pastor-portrait img { object-fit: cover; object-position: center top; }
+.home-pastor-heading { min-width: 0; }
+@media (max-width: 820px) {
+  .home-pastor-portrait { width: min(200px,100%); margin-inline: auto; }
+  .home-pastor-heading { text-align: center; }
+}
+
+/* Heading in the ceiling area, soft corner shading, and centered visitor details. */
+.home-photo-intro { position: relative; isolation: isolate; background: #eef0f4; }
+.home-congregation-photo { width: 100%; }
+.home-congregation-photo img { display: block; width: 100%; height: auto; }
+.home-photo-corners { position: absolute; inset: 0; z-index: 1; pointer-events: none; background:
+  radial-gradient(ellipse at top left,rgba(9,19,44,.48),transparent 48%),
+  radial-gradient(ellipse at top right,rgba(9,19,44,.48),transparent 48%),
+  radial-gradient(ellipse at bottom left,rgba(9,19,44,.48),transparent 46%),
+  radial-gradient(ellipse at bottom right,rgba(9,19,44,.48),transparent 46%),
+  linear-gradient(to bottom,rgba(9,19,44,.28),transparent 24%); }
+.home-photo-heading { position: absolute; z-index: 2; top: clamp(8px,1.3vw,24px); left: 50%; transform: translateX(-50%); padding: 0; text-align: center; color: #fff; text-shadow: 0 2px 8px rgba(0,0,0,.65); }
+.home-photo-heading > p { margin: 0 0 4px; font-family: var(--sans); font-size: clamp(.58rem,.9vw,.85rem); font-weight: 700; letter-spacing: .2em; text-transform: uppercase; line-height: 1.3; }
+.home-photo-heading h1 { margin: 0; font-family: var(--sans); font-size: clamp(2rem,4.5vw,4.75rem); line-height: 1.1; font-weight: 800; letter-spacing: -.02em; color: #fff; }
+.home-sunday-invitation { padding-block: 34px 40px; background: #fff; border-bottom: 1px solid var(--line-dark); }
+.home-sunday-grid { display: flex; flex-direction: column; align-items: center; gap: 24px; text-align: center; }
+.home-sunday-time { margin: 0 0 10px; color: var(--navy); font-family: var(--sans); font-size: clamp(1rem,1.5vw,1.2rem); font-weight: 800; line-height: 1.5; }
+.home-sunday-location { margin: 0; color: #536078; font-family: var(--sans); font-size: 1rem; line-height: 1.7; }
+.home-sunday-location strong { color: var(--navy-deep); font-size: 1.08rem; }
+.home-welcome-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 0; }
+.home-welcome-buttons a { display: inline-flex; align-items: center; justify-content: center; gap: 18px; min-height: 50px; padding: 12px 20px; border: 1px solid var(--navy); border-radius: 4px; font-size: .78rem; font-weight: 800; letter-spacing: .035em; line-height: 1.4; transition: background 180ms ease,color 180ms ease; }
+.home-visit-button { background: var(--navy); color: #fff; }
+.home-visit-button:hover { background: var(--navy-deep); }
+.home-directions-button { background: #fff; color: var(--navy); }
+.home-directions-button span { color: var(--orange); }
+.home-directions-button:hover { background: #eef2fa; }
+.home-invitation-copy { max-width: 760px; margin: 0; font-size: 1.02rem; line-height: 1.8; color: #31394a; text-align: center; }
+@media (max-width: 820px) {
+  .home-sunday-invitation { padding-block: 28px 32px; }
+  .home-invitation-copy { font-size: .96rem; }
+}
+@media (max-width: 420px) {
+  .home-welcome-buttons { display: grid; grid-template-columns: 1fr; width: min(100%,320px); }
+  .home-welcome-buttons a { width: 100%; }
+}
+
+/* Larger ceiling heading and high-contrast service details over the chairs. */
+.home-photo-intro { background-color: var(--navy-deep); background-size: cover; background-position: center; }
+.home-photo-heading > p { font-size: clamp(.7rem,1.1vw,1.05rem); margin-bottom: 8px; }
+.home-photo-corners { background:
+  radial-gradient(ellipse at top left,rgba(9,19,44,.48),transparent 48%),
+  radial-gradient(ellipse at top right,rgba(9,19,44,.48),transparent 48%),
+  radial-gradient(ellipse at bottom left,rgba(9,19,44,.42),transparent 46%),
+  radial-gradient(ellipse at bottom right,rgba(9,19,44,.42),transparent 46%),
+  linear-gradient(to top,rgba(5,13,30,.88),rgba(5,13,30,.65) 12%,transparent 36%),
+  linear-gradient(to bottom,rgba(9,19,44,.45),transparent 26%); }
+.home-photo-service { position: absolute; z-index: 2; bottom: clamp(16px,1.8vw,34px); left: 50%; transform: translateX(-50%); width: min(760px,calc(100% - 32px)); text-align: center; color: #fff; text-shadow: 0 2px 5px rgba(0,0,0,.9); }
+.home-photo-service .home-sunday-time { color: #fff; font-size: clamp(1rem,1.7vw,1.35rem); margin-bottom: 8px; }
+.home-photo-service .home-sunday-location { color: #fff; font-size: clamp(.88rem,1.2vw,1.08rem); line-height: 1.55; }
+.home-photo-service .home-sunday-location strong { color: #fff; font-size: 1.08em; }
+@media (max-width: 700px) {
+  /* Keep the whole group photo visible between the two readable text areas. */
+  .home-congregation-photo { padding-top: 112px; padding-bottom: 150px; }
+  .home-photo-heading { top: 20px; }
+  .home-photo-heading h1 { font-size: clamp(2rem,6vw,2.6rem); }
+  .home-photo-service { bottom: 18px; }
+  .home-photo-corners { background:
+    linear-gradient(to bottom,rgba(5,13,30,.9),rgba(5,13,30,.75) 20%,transparent 34%),
+    linear-gradient(to top,rgba(5,13,30,.96),rgba(5,13,30,.85) 27%,transparent 43%),
+    radial-gradient(ellipse at top left,rgba(9,19,44,.3),transparent 48%),
+    radial-gradient(ellipse at bottom right,rgba(9,19,44,.3),transparent 48%); }
+}

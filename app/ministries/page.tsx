@@ -10,10 +10,30 @@ export const metadata: Metadata = {
 };
 
 const ministries = [
-  { number: "01", symbol: "✦", title: "Worship", copy: "Gathering to honour Jesus Christ together through praise and a shared response to His goodness." },
-  { number: "02", symbol: "⌁", title: "Prayer", copy: "Seeking God together and supporting one another by carrying needs, hopes, and thanksgiving in prayer." },
-  { number: "03", symbol: "◫", title: "Bible Teaching", copy: "Learning the good news of Jesus Christ through Scripture and growing in a faith that shapes everyday life." },
-  { number: "04", symbol: "◎", title: "Fellowship", copy: "Growing as a spiritual family through community, meals, encouragement, and practical care for one another." },
+  {
+    "number": "01",
+    "symbol": "✦",
+    "title": "Worship and prayer",
+    "copy": "We gather to honour God through singing, prayer, and reflection on Scripture. Our desire is to worship with sincerity and respond to God with our lives.",
+    "href": "/visit",
+    "action": "Join Us on Sunday"
+  },
+  {
+    "number": "02",
+    "symbol": "◫",
+    "title": "Bible teaching and discipleship",
+    "copy": "We want to understand the Bible in its context and apply its teaching thoughtfully. Whether you are new to Scripture or have studied it for years, there is always more to learn about following Jesus.",
+    "href": "/next-steps#groups",
+    "action": "Ask About Current Studies"
+  },
+  {
+    "number": "03",
+    "symbol": "◎",
+    "title": "Fellowship and practical care",
+    "copy": "Friendships grow as people spend time together, listen, and care for one another. Ask how you can connect with our church family or offer practical help.",
+    "href": "/contact",
+    "action": "Connect With Us"
+  }
 ];
 
 export default function MinistriesPage() {
@@ -26,13 +46,13 @@ export default function MinistriesPage() {
           index="03 / 05"
           label="Ministries"
           title={<>Growing together.<br /><em>Serving together.</em></>}
-          intro="Our shared life is built around worship, prayer, Scripture, and caring community."
+          intro="Church life includes gathering for worship and learning to follow Jesus throughout the week. We would love to help you find a way to connect."
         />
 
         <section className="ministries-intro page-shell reveal">
           <p className="section-index">A SHARED LIFE</p>
           <h2>Every gathering is an invitation<br />to know Jesus <em>more deeply.</em></h2>
-          <p>Ministry details and schedules will be added as they are confirmed. For now, these are the central rhythms that shape our life together.</p>
+          <p>Grow in faith and build meaningful relationships. Ask us about current opportunities to connect.</p>
         </section>
 
         <section className="ministry-list page-shell">
@@ -41,7 +61,7 @@ export default function MinistriesPage() {
               <span className="ministry-number">{ministry.number}</span>
               <span className="ministry-symbol" aria-hidden="true">{ministry.symbol}</span>
               <h3>{ministry.title}</h3>
-              <p>{ministry.copy}</p>
+              <div className="ministry-description"><p>{ministry.copy}</p><Link className="cnbc-text-link" href={ministry.href}>{ministry.action} →</Link></div>
             </article>
           ))}
         </section>

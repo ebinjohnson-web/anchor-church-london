@@ -26,7 +26,7 @@ export default function ChurchLifePage() {
 
         <section className="life-intro page-shell">
           <div className="reveal"><p className="section-index">OUR CHURCH FAMILY</p><h2>More than a crowd.<br /><em>A community.</em></h2></div>
-          <p className="reveal">Church life happens in the gathered moments and the small ones: worship, fellowship, prayer, children, baptism, youth, meals, and the moments when family simply shows up for family.</p>
+          <p className="reveal">Church life includes gathering for worship and learning to follow Jesus throughout the week. We would love to help you find a way to connect.</p>
         </section>
 
         <section className="life-collage page-shell" aria-label="Anchor Church family photo collage">
@@ -37,10 +37,9 @@ export default function ChurchLifePage() {
         </section>
 
         <section className="photos-coming page-shell reveal">
-          <span>Gallery update</span>
-          <h2>More stories<br /><em>coming soon.</em></h2>
-          <p>Selected photos from worship, fellowship, prayer, children, baptism, youth, meals, and church family moments can be added here as the church approves them.</p>
-          <Link className="button button-dark" href="/contact">Connect with us <span aria-hidden="true">↗</span></Link>
+          <span>Life together</span><h2>Grow in faith.<br /><em>Build friendships.</em></h2>
+          <p>Bring your questions, build friendships, and discover ways to participate in church life. We would love to help you find your next step.</p>
+          <div className="content-actions"><Link className="button button-dark" href="/ministries">Explore Ministries →</Link><Link className="text-link" href="/next-steps">Take Your Next Step →</Link></div>
         </section>
       </main>
       <Footer />
