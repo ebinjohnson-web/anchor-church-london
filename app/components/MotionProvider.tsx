@@ -11,7 +11,7 @@ export default function MotionProvider() {
     const selector = ".reveal, [data-motion], main h2, main h3, main .content-columns, main .visitor-faq, main .life-photo, main .contact-form-wrap";
     // Animate the outer target once rather than moving nested blocks twice.
     const items = Array.from(document.querySelectorAll<HTMLElement>(selector)).filter(item => !item.parentElement?.closest(selector));
-    const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const mobile = window.matchMedia("(max-width: 820px)");
     if (!("IntersectionObserver" in window)) return;
     const animations = new Set<Animation>();
     const observer = new IntersectionObserver(entries => {
@@ -20,13 +20,13 @@ export default function MotionProvider() {
         const element = entry.target as HTMLElement;
         if (typeof element.animate === "function") {
           const hero = element.getAttribute("data-motion") === "hero";
-          // Keep the requested entrance on phones using Reduce Motion,
-          // with a shorter travel distance and no repeating movement.
-          const distance = preference.matches ? (hero ? 24 : 16) : (hero ? 96 : 48);
+          // Full upward entrances requested for mobile, including Reduce Motion.
+          const distance = mobile.matches ? (hero ? 240 : 200) : (hero ? 160 : 120);
+          const duration = mobile.matches ? (hero ? 1800 : 1600) : (hero ? 1400 : 1200);
           const animation = element.animate([
             { opacity: 0, transform: `translateY(${distance}px)` },
             { opacity: 1, transform: "translateY(0)" },
-          ], { duration: hero ? 1100 : 850, easing: "cubic-bezier(.16,1,.3,1)" });
+          ], { duration, easing: "cubic-bezier(.25,.8,.25,1)" });
           animations.add(animation);
           animation.onfinish = () => animations.delete(animation);
         }

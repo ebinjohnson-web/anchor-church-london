@@ -1079,13 +1079,10 @@ h1,h2,h3 { text-wrap: balance; }
 .footer-brand small { text-transform: none; font-size: .7rem; letter-spacing: .01em; opacity: .88; }
 .footer-bottom { color: rgba(255,255,255,.86); }
 .mission-ticker { position: relative; overflow: hidden; padding-block: 26px; border-block: 1px solid var(--line-dark); background: #fff; color: var(--navy); }
-.mission-ticker-track { display: flex; width: max-content; animation: mission-ticker-scroll 44s linear infinite; }
+.mission-ticker-track { display: flex; width: max-content; animation: mission-ticker-scroll 32s linear infinite; }
 .mission-ticker-copy { display: flex; align-items: center; gap: 32px; padding-right: 32px; white-space: nowrap; font-size: clamp(1.4rem,2.6vw,2.6rem); font-weight: 750; letter-spacing: -.035em; }
 .mission-ticker-copy em { font-family: var(--accent-serif); font-size: 1.1em; font-weight: 400; }
 .mission-ticker-copy b { color: var(--orange); font-size: .55em; }
-.mission-ticker.is-paused .mission-ticker-track { animation-play-state: paused; }
-.mission-ticker-control { position: absolute; z-index: 1; right: 12px; top: 50%; transform: translateY(-50%); min-width: 64px; min-height: 44px; padding: 8px 12px; border: 1px solid var(--line-dark); border-radius: 4px; color: var(--navy); background: #fff; font: 600 .75rem var(--sans); cursor: pointer; }
-.mission-ticker-control:hover { background: #eef2fa; }
 .motion-sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 @keyframes mission-ticker-scroll { to { transform: translateX(-50%); } }
 @media (max-width: 700px) {
@@ -1100,9 +1097,8 @@ h1,h2,h3 { text-wrap: balance; }
   .home-welcome-buttons a { width: 100%; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .mission-ticker-track { animation: none; transform: none; width: 100%; }
-  .mission-ticker-copy { flex-wrap: wrap; justify-content: center; white-space: normal; padding: 0 20px; gap: 12px 20px; }
-  .mission-ticker-copy + .mission-ticker-copy,.mission-ticker-control { display: none; }
+  /* Explicitly requested continuous motion, including on mobile. */
+  .mission-ticker-track { animation: mission-ticker-scroll 32s linear infinite !important; }
   .home-welcome-buttons a:hover,.interest-card:hover { transform: none; }
 }
 
