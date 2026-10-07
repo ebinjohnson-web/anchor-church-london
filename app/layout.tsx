@@ -1,7 +1,15 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import "./globals.css";
 import MotionProvider from "./components/MotionProvider";
 import { assetPath } from "./lib/assets";
+
+const inter = localFont({
+  src: "../public/fonts/InterVariable.woff2",
+  variable: "--font-inter",
+  display: "swap",
+  weight: "100 900",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://anchorchurchlondonca.com"),
@@ -15,7 +23,7 @@ export const metadata: Metadata = {
     title: "Anchor Church London",
     description: "A Christian church family in London, Ontario.",
     type: "website",
-    images: ["/images/family-banner.jpg"],
+    images: ["/images/london-skyline.jpg"],
   },
   icons: {
     icon: assetPath("/images/anchor-church-logo.jpg"),
@@ -32,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.variable}>
       <body>
         {children}
         <MotionProvider />

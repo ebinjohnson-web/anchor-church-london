@@ -11,7 +11,6 @@ type SubItem = { label: string; href?: string };
 type NavItem = { href: string; label: string; children?: SubItem[] };
 const navItems: NavItem[] = [
   { href: "/", label: "Home" },
-  { href: "/visit", label: "I’m New" },
   { href: "/about", label: "About", children: [
     { label: "Our Story and Leadership", href: "/about#our-story" },
     { label: "What We Believe" },
@@ -31,7 +30,7 @@ const navItems: NavItem[] = [
     { label: "Messages" },
     { label: "Events and Stories" },
   ] },
-  { href: "/contact", label: "Contact" },
+  { href: "/give", label: "Give" },
 ];
 
 export default function Header() {
@@ -105,13 +104,12 @@ export default function Header() {
       <div className="header-shell">
         <Link className="brand" href="/" aria-label="Anchor Church London home" onClick={closeNavigation}>
           <Image src={assetPath("/images/anchor-church-logo.jpg")} alt="Anchor Church London" width={66} height={66} priority />
-          <span><strong>Anchor Church</strong><small>London, Ontario</small></span>
+          <span><strong>ANCHOR CHURCH</strong></span>
         </Link>
         <nav className="desktop-nav" aria-label="Main navigation">{navigation("desktop")}</nav>
         <Link className="header-cta" href="/visit" onClick={closeNavigation}>Plan Your Visit <span aria-hidden="true">→</span></Link>
         <button ref={menuRef} className={`menu-toggle${open ? " is-open" : ""}`} type="button" aria-label={open ? "Close navigation" : "Open navigation"} aria-expanded={open} aria-controls="mobile-navigation" onClick={() => { setOpen(!open); setExpanded(null); }}><span /><span /></button>
       </div>
-      <div className="brand-stripes" aria-hidden="true"><span /><span /><span /></div>
       <div id="mobile-navigation" className={`mobile-menu${open ? " is-open" : ""}`} inert={!open}>
         <nav aria-label="Mobile navigation">{navigation("mobile")}</nav>
         <div className="mobile-menu-footer">

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import MissionTicker from "./components/MissionTicker";
 import { assetPath } from "./lib/assets";
 
 export const metadata: Metadata = {
@@ -48,28 +49,26 @@ export default function Home() {
       <a className="skip-link" href="#main">Skip to content</a>
       <Header />
       <main id="main" className="cnbc-home">
-        <section className="home-photo-intro" aria-labelledby="home-welcome-title" style={{ backgroundImage: `url("${assetPath("/images/wide-congregation.jpg")}")` }}>
+        <section className="home-photo-intro" aria-labelledby="home-welcome-title">
           <div className="home-congregation-photo">
-            <Image src={assetPath("/images/wide-congregation.jpg")} alt="Anchor Church London congregation gathered together" width={2000} height={900} sizes="100vw" priority />
+            <Image src={assetPath("/images/london-skyline.jpg")} alt="London, Ontario skyline with downtown high-rise buildings" width={3852} height={1961} sizes="100vw" priority />
           </div>
           <div className="home-photo-corners" aria-hidden="true" />
           <div className="home-photo-heading page-shell">
-            <p>A Church Family</p>
-            <h1 id="home-welcome-title">Anchored in Jesus</h1>
-          </div>
-          <div className="home-sunday-info home-photo-service">
-            <p className="home-sunday-time">{church.service}</p>
-            <p className="home-sunday-location"><strong>{church.venue}</strong><br />{church.street}<br />{church.city}</p>
+            <div className="hero-title-motion" data-motion="hero">
+              <p>A Church Family in London, Ontario</p>
+              <h1 id="home-welcome-title"><span>Anchored in</span>{" "}<span>Jesus</span></h1>
+            </div>
           </div>
         </section>
 
         <section className="home-sunday-invitation" aria-label="Plan your Sunday visit">
           <div className="page-shell home-sunday-grid">
-            <div className="home-welcome-buttons">
+            <div className="home-welcome-buttons" data-motion="rise">
               <Link className="home-visit-button" href="/visit">Plan Your Visit <span aria-hidden="true">→</span></Link>
               <a className="home-directions-button" href={church.mapUrl} target="_blank" rel="noreferrer">Get Directions <span aria-hidden="true">↗</span></a>
             </div>
-            <p className="home-invitation-copy">Discover the hope of Jesus and a church family where you can grow in faith. Whether you are exploring Christianity, returning to church, or looking for a church home, you are welcome here.</p>
+            <p className="home-invitation-copy">Find hope in Jesus and a church family to grow with. Wherever you are on your journey, you’re welcome here.</p>
           </div>
         </section>
 
@@ -77,12 +76,12 @@ export default function Home() {
           <div className="pastor-welcome-shape" aria-hidden="true" />
           <div className="page-shell pastor-welcome-grid">
             <div className="pastor-welcome-heading home-pastor-heading">
-              <div className="home-pastor-portrait"><Image src={assetPath("/images/pastor-sudhir.jpg")} alt="Pastor Sudhir Basumatary, Founder and Lead Pastor of Anchor Church London" fill sizes="(max-width: 820px) 200px, 240px" /></div>
+              <div className="home-pastor-portrait" data-motion="rise"><Image src={assetPath("/images/pastor-sudhir.jpg")} alt="Pastor Sudhir Basumatary, Founder and Lead Pastor of Anchor Church London" fill sizes="(max-width: 820px) 200px, 240px" /></div>
               <p>A welcome from</p>
               <h2 id="pastor-welcome-title">Pastor Sudhir</h2>
               <span>Founder and Lead Pastor</span>
             </div>
-            <div className="pastor-welcome-copy">
+            <div className="pastor-welcome-copy" data-motion="rise">
               <p>Welcome to Anchor Church London. My prayer is that you will discover the hope of Jesus and find a church family where you can grow in faith and build meaningful friendships. Whether you are exploring faith or looking for a church home, your questions are welcome. Join us this Sunday—I look forward to meeting you.</p>
               <p className="pastor-welcome-signature">Pastor Sudhir Basumatary</p>
               <Link className="cnbc-text-link" href="/visit">Plan Your Visit →</Link>
@@ -92,13 +91,13 @@ export default function Home() {
 
         <section className="interest-heading">
           <div className="interest-shape" aria-hidden="true" />
-          <div><h2>Take your <strong>next step.</strong></h2><p>Bring your questions, build friendships, and discover ways to participate in church life. We would love to help you find your next step.</p></div>
+          <div><h2 data-motion="rise">Take your <strong>next step.</strong></h2><p>Bring your questions, build friendships, and discover ways to participate in church life. We would love to help you find your next step.</p></div>
         </section>
 
         <section className="interest-section" aria-label="Explore Anchor Church">
           <div className="interest-grid page-shell">
             {interests.map((item) => (
-              <Link className="interest-card" href={item.href} key={item.title}>
+              <Link className="interest-card" data-motion="rise" href={item.href} key={item.title}>
                 <InterestIcon name={item.icon} />
                 <h3>{item.title}</h3>
                 <p>{item.copy}</p>
@@ -106,6 +105,8 @@ export default function Home() {
             ))}
           </div>
         </section>
+
+        <MissionTicker />
 
         <section className="mission-section">
           <div className="mission-shape mission-shape-one" aria-hidden="true" />

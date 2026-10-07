@@ -12,7 +12,7 @@ export default function PageHero({ index, label, title, intro }: PageHeroProps) 
       <div className="hero-orbit page-orbit-two" aria-hidden="true" />
       <div className="page-shell page-hero-grid">
         <p className="page-hero-index">{index}</p>
-        <div>
+        <div data-motion="hero">
           <p className="kicker light-kicker"><span /> {label}</p>
           <h1>{title}</h1>
         </div>

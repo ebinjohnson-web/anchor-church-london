@@ -21,18 +21,19 @@ export default function Footer() {
           />
 
           <span>
-            <strong>Anchor Church</strong>
+            <strong>ANCHOR CHURCH</strong>
             <small>Anchored in Jesus. Sharing His hope in London and beyond.</small>
           </span>
         </Link>
 
         <nav className="footer-links" aria-label="Footer navigation">
           <Link href="/about">About</Link>
-          <Link href="/visit">I&apos;m New</Link>
+          <Link href="/visit">Plan Your Visit</Link>
           <Link href="/next-steps">Next Steps</Link>
           <Link href="/ministries">Ministries</Link>
           <Link href="/opportunities">Opportunities</Link>
           <Link href="/church-life">Church Life</Link>
+          <Link href="/give">Give</Link>
           <Link href="/contact">Contact</Link>
         </nav>
 
@@ -62,6 +63,10 @@ export default function Footer() {
         </p>
 
         <p>Jesus Christ is our anchor.</p>
+      </div>
+      <div className="footer-photo-credit page-shell">
+        <a href="https://commons.wikimedia.org/wiki/File:London_Ontario_Skyline_2017_(cropped).jpg" target="_blank" rel="noreferrer">London skyline (2017): Mcalpinestudios</a>
+        {" · "}<a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noreferrer">CC BY-SA 4.0</a>{" · Displayed in grayscale"}
       </div>
     </footer>
   );
