@@ -1175,3 +1175,13 @@ h1,h2,h3 { text-wrap: balance; }
   .home-welcome-buttons { width: min(100%,380px); display: grid; grid-template-columns: 1fr; }
   .home-welcome-buttons a { width: 100%; min-width: 0; }
 }
+
+/* Keep the mobile menu icon visible against the navy header. */
+@media (max-width: 1100px) {
+  .menu-toggle {
+    background: transparent;
+    color: #fff;
+    border-color: rgba(255,255,255,.5);
+    border-radius: 6px;
+  }
+}
