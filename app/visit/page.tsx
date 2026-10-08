@@ -79,9 +79,9 @@ export default function VisitPage() {
             <details><summary>Do I need to register?</summary><p>You do not need to register for a regular Sunday service. You may email us with questions before you arrive. Special events may have separate registration.</p></details>
             <details><summary>Can I bring my children?</summary><p>Yes, families are welcome. Contact us before your visit to learn about current children’s activities, age groups, supervision, and check-in arrangements.</p></details>
             <details><summary>Will I be expected to give money?</summary><p>No. As our guest, please feel free to attend without giving. Financial contributions are voluntary.</p></details>
-            <details><summary>What if I need prayer or someone to talk to?</summary><p>Ask to speak with a member of the pastoral team after the service.</p></details>
+            <details><summary>What if I need prayer or someone to talk to?</summary><p>Ask to speak with a member of the pastoral team after the service, or visit our <Link href="/prayer-care">Prayer and Care page</Link> to request contact.</p></details>
             <details><summary>What language is the service in?</summary><p>Our services are in English.</p></details>
-            <details><summary>Can I watch online?</summary><p>Yes, you can join our service online. If you are in London, we would love to welcome you in person. Contact us for the current broadcast link.</p></details>
+            <details><summary>Can I watch online?</summary><p>Yes, you can join our service online. If you are in London, we would love to welcome you in person. Visit our <Link href="/messages">Messages page</Link> to ask for the current broadcast link.</p></details>
           </div>
         </section>
 

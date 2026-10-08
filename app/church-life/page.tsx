@@ -39,7 +39,7 @@ export default function ChurchLifePage() {
         <section className="photos-coming page-shell reveal">
           <span>Life together</span><h2>Grow in faith.<br /><em>Build friendships.</em></h2>
           <p>Bring your questions, build friendships, and discover ways to participate in church life. We would love to help you find your next step.</p>
-          <div className="content-actions"><Link className="button button-dark" href="/ministries">Explore Ministries →</Link><Link className="text-link" href="/next-steps">Take Your Next Step →</Link></div>
+          <div className="content-actions"><Link className="button button-dark" href="/ministries">Explore Ministries →</Link><Link className="text-link" href="/next-steps">Take Your Next Step →</Link><Link className="text-link" href="/prayer-care">Prayer and Care →</Link><Link className="text-link" href="/messages">Messages →</Link><Link className="text-link" href="/events">Events and Stories →</Link></div>
         </section>
       </main>
       <Footer />

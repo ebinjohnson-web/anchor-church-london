@@ -1181,3 +1181,18 @@ h1,h2,h3 { text-wrap: balance; }
     border-radius: 6px;
   }
 }
+
+/* Content additions retain the current type, palette, spacing and motion. */
+.desktop-nav .nav-primary { padding-inline: 10px; }
+.belief-summary { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 28px 36px; margin: 32px 0 40px; }
+.belief-summary article { border-top: 1px solid var(--line-dark); padding-top: 18px; }
+.belief-summary h3 { margin: 0 0 12px; }
+.belief-summary p,.giving-questions > p { line-height: 1.75; }
+.giving-questions { max-width: 820px; padding-top: 0; }
+.giving-questions > p { margin-bottom: 28px; }
+.care-details { padding-top: 0; }
+.care-details .content-actions { margin-top: 28px; }
+.reflection-prompts { padding-left: 22px; line-height: 1.75; margin-bottom: 28px; }
+.reflection-prompts li + li { margin-top: 14px; }
+@media (max-width: 820px) { .belief-summary { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px; } }
+@media (max-width: 560px) { .belief-summary { grid-template-columns: 1fr; } }
