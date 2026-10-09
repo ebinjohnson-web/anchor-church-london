@@ -11,28 +11,22 @@ export const metadata: Metadata = {
 
 const ministries = [
   {
-    "number": "01",
-    "symbol": "✦",
     "title": "Worship and prayer",
     "copy": "We gather to honour God through singing, prayer, and reflection on Scripture. Our desire is to worship with sincerity and respond to God with our lives.",
     "href": "/visit",
     "action": "Join Us on Sunday"
   },
   {
-    "number": "02",
-    "symbol": "◫",
     "title": "Bible teaching and discipleship",
     "copy": "We want to understand the Bible in its context and apply its teaching thoughtfully. Whether you are new to Scripture or have studied it for years, there is always more to learn about following Jesus.",
     "href": "/next-steps#groups",
     "action": "Ask About Current Studies"
   },
   {
-    "number": "03",
-    "symbol": "◎",
     "title": "Fellowship and practical care",
     "copy": "Friendships grow as people spend time together, listen, and care for one another. Ask how you can connect with our church family or offer practical help.",
     "href": "/contact",
-    "action": "Connect With Us"
+    "action": "Ask About Fellowship"
   }
 ];
 
@@ -41,7 +35,7 @@ export default function MinistriesPage() {
     <>
       <a className="skip-link" href="#main">Skip to content</a>
       <Header />
-      <main id="main">
+      <main id="main" className="ministries-page">
         <PageHero
           index="03 / 05"
           label="Ministries"
@@ -57,11 +51,9 @@ export default function MinistriesPage() {
 
         <section className="ministry-list page-shell">
           {ministries.map((ministry) => (
-            <article className="ministry-row reveal" key={ministry.number}>
-              <span className="ministry-number">{ministry.number}</span>
-              <span className="ministry-symbol" aria-hidden="true">{ministry.symbol}</span>
+            <article className="ministry-row reveal" key={ministry.title}>
               <h3>{ministry.title}</h3>
-              <div className="ministry-description"><p>{ministry.copy}</p><Link className="cnbc-text-link" href={ministry.href}>{ministry.action} →</Link></div>
+              <div className="ministry-description"><p>{ministry.copy}</p><Link className="ministry-button" href={ministry.href}>{ministry.action}</Link></div>
             </article>
           ))}
         </section>
@@ -71,7 +63,7 @@ export default function MinistriesPage() {
             <p className="kicker light-kicker"><span /> Find your place</p>
             <h2>Want to know where<br /><em>you can connect?</em></h2>
             <p>Send us a message and we will help you find the latest information.</p>
-            <Link className="button button-light" href="/contact">Contact Anchor Church <span aria-hidden="true">↗</span></Link>
+            <Link className="ministry-button ministry-button-light" href="/contact">Contact Anchor Church</Link>
           </div>
         </section>
       </main>
