@@ -16,9 +16,9 @@ const steps = [
   { id: "serving", title: "Serve with us", copy: ["Your time and abilities can encourage someone else. Ask about opportunities in hospitality, worship, practical support, media, and other areas of church life. We will help you understand the role and any preparation required."], action: "Ask About Serving" },
 ];
 export default function NextStepsPage() {
-  return <><a className="skip-link" href="#main">Skip to content</a><Header /><main id="main">
-    <PageHero index="NEXT STEPS" label="Explore Jesus and get connected" title={<>Bring your questions.<br /><em>Take your next step.</em></>} intro="Bring your questions, build friendships, and discover ways to participate in church life. We would love to help you find your next step." />
-    <nav className="section-links page-shell" aria-label="Next Steps sections"><a href="#explore-jesus">Explore Jesus</a>{steps.map(step => <a href={`#${step.id}`} key={step.id}>{step.id === "groups" ? "Groups" : step.title}</a>)}<Link href="/opportunities">Opportunities and Internships</Link></nav>
+  return <><a className="skip-link" href="#main">Skip to content</a><Header /><main id="main" className="next-steps-page">
+    <PageHero index="NEXT STEPS" label="Explore Jesus and get connected" title={<>Bring your questions.<br /><em>Take your next step.</em></>} intro="Explore faith in Jesus, build friendships, and find your place in church life." />
+    <nav className="section-links page-shell" aria-label="Next Steps sections"><a href="#explore-jesus">Explore Jesus</a>{steps.map(step => <a href={`#${step.id}`} key={step.id}>{step.id === "groups" ? "Groups" : step.id === "serving" ? "Serve" : step.title}</a>)}<Link href="/opportunities">Opportunities</Link></nav>
     <section className="content-section page-shell" id="explore-jesus">
       <p className="kicker"><span /> Explore Jesus</p><h2>What is the good news of Jesus?</h2>
       <div className="content-columns"><div>
@@ -28,7 +28,7 @@ export default function NextStepsPage() {
         <p className="scripture-reference">John 3:16–17; Romans 3:23–24; 1 Corinthians 15:3–4; Ephesians 2:8–10.</p>
       </div><div><h3>Bring your questions</h3><p>You may be wondering whether God is real, what the Bible means, or how faith relates to your life. We would welcome a conversation. You do not need to pretend that you have everything settled.</p><a className="cnbc-button" href={enquiryEmail("Exploring Jesus")}>Talk With Someone About Jesus</a><p className="enquiry-note">Enquiry buttons open your email app with the subject filled in. Review your message and press Send there.</p></div></div>
     </section>
-    <div className="next-step-sections">{steps.map(step => <section className="content-section page-shell" id={step.id} key={step.id}><div className="content-columns"><div><p className="kicker"><span /> Your next step</p><h2>{step.title}</h2></div><div>{step.copy.map(copy => <p key={copy}>{copy}</p>)}{step.scripture && <p className="scripture-reference">{step.scripture}</p>}<a className="cnbc-button" href={enquiryEmail(step.title)}>{step.action}</a></div></div></section>)}</div>
+    <div className="next-step-sections">{steps.map(step => <section className="content-section page-shell" id={step.id} key={step.id}><div className="content-columns"><div><h2>{step.title}</h2></div><div>{step.copy.map(copy => <p key={copy}>{copy}</p>)}{step.scripture && <p className="scripture-reference">{step.scripture}</p>}<a className="cnbc-button" href={enquiryEmail(step.title)}>{step.action}</a></div></div></section>)}</div>
     <section className="simple-cta"><div className="page-shell"><p className="kicker light-kicker"><span /> Participate</p><h2>Explore opportunities<br /><em>to serve and learn.</em></h2><Link className="button button-light" href="/opportunities">Opportunities and Internships →</Link></div></section>
   </main><Footer /></>;
 }
