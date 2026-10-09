@@ -1373,3 +1373,64 @@ h1,h2,h3 { text-wrap: balance; }
   .next-steps-page .cnbc-button,
   .next-steps-page .simple-cta .button { width: 100%; }
 }
+
+/* Visit page: prominent essentials, readable welcome and consistent actions. */
+.visit-page .visit-overview { grid-template-columns: .65fr 1.35fr; gap: clamp(28px, 4vw, 56px); padding-block: clamp(40px, 6vw, 80px); }
+.visit-page .visit-intro h2 { margin-bottom: 24px; font-size: clamp(2.6rem, 4.5vw, 4.5rem); }
+.visit-page .visit-intro > p:not(.kicker) { margin-top: 0; font-size: 1.1rem; line-height: 1.75; color: var(--muted); }
+.visit-page .visit-detail { min-height: 0; padding: 24px; gap: 14px; }
+.visit-page .visit-detail h3 { margin: 0; font-size: 1.5rem; line-height: 1.3; }
+.visit-page .visit-detail p { font-size: 1.05rem; line-height: 1.65; }
+.visit-page .visit-detail .visit-service-time { font-size: 1.2rem; font-weight: 750; color: var(--navy); }
+.visit-page .visit-detail strong { color: var(--navy); }
+.visit-page .expect-section { padding-block: clamp(40px, 6vw, 80px); }
+.visit-page .expect-grid { gap: clamp(28px, 4vw, 56px); }
+.visit-page .expect-list li { gap: 18px; padding-block: 24px; }
+.visit-page .expect-list p { font-size: 1.1rem; color: rgba(255,255,255,.85); }
+.visit-page .pastor-welcome-section { padding-block: clamp(40px, 5vw, 64px); }
+.visit-page .pastor-welcome-grid { grid-template-columns: .6fr 1.4fr; gap: clamp(24px, 4vw, 48px); align-items: start; }
+.visit-page .pastor-welcome-copy p,
+.visit-page .pastor-welcome-copy > p:first-child { font-size: 1.1rem; line-height: 1.75; }
+.visit-page .pastor-welcome-heading { padding-top: 4px; }
+.visit-page .pastor-welcome-copy .pastor-welcome-signature { font-size: 1.4rem; }
+.visit-page .enquiry-note { font-size: .9rem !important; line-height: 1.65 !important; }
+.visit-page .content-actions { gap: 12px; }
+.visit-page .visit-button,
+.visit-page .cnbc-button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; max-width: 100%; padding: 16px 22px; border: 2px solid var(--navy); border-radius: 6px; background: var(--navy); color: #fff; font-size: 1rem; line-height: 1.35; font-weight: 750; letter-spacing: .015em; text-transform: none; text-decoration: none; text-align: center; }
+.visit-page .visit-button-outline { background: transparent; color: var(--navy); }
+.visit-page .visit-detail .visit-button { margin-top: 4px; }
+.visit-page .visit-button:hover { background: #263d6b; color: #fff; }
+.visit-page .visit-button:focus-visible,
+.visit-page .cnbc-button:focus-visible { outline: 3px solid var(--orange); outline-offset: 4px; }
+.visit-page .content-section { padding-block: clamp(40px, 5vw, 64px); }
+.visit-page .visitor-faq details { padding-block: 8px; }
+.visit-page .visitor-faq summary { font-size: 1.05rem; line-height: 1.5; padding-block: 14px; }
+.visit-page .visitor-faq details p { font-size: 1.1rem; }
+.visit-page .location-cta { align-items: center; gap: 32px; padding-block: clamp(40px, 6vw, 80px); border-top: 1px solid var(--line-dark); }
+.visit-page .location-cta h2 { font-size: clamp(2rem, 3.5vw, 3.2rem); line-height: 1.15; margin: 0 0 24px; max-width: 650px; }
+.visit-closing-time { margin: 0 0 12px; font-size: 1.1rem; font-weight: 750; line-height: 1.6; }
+.visit-page .location-cta address { font-size: 1.1rem; line-height: 1.7; font-style: normal; }
+.visit-page .location-cta .visit-closing-actions { gap: 12px; min-width: 220px; }
+.visit-closing-actions .visit-button { width: 100%; }
+@media (max-width: 820px) {
+  .visit-page .visit-overview,
+  .visit-page .pastor-welcome-grid { grid-template-columns: 1fr; gap: 28px; }
+  .visit-page .expect-grid { gap: 28px; }
+  .visit-page .location-cta { align-items: stretch; }
+  .visit-page .location-cta .visit-closing-actions { flex-direction: row; flex-wrap: wrap; min-width: 0; }
+  .visit-closing-actions .visit-button { flex: 1 1 200px; }
+}
+@media (max-width: 600px) {
+  .visit-page .visit-detail-grid { grid-template-columns: 1fr; }
+  .visit-page .visit-detail { padding: 22px; gap: 12px; }
+  .visit-page .visit-detail .visit-button { align-self: flex-start; }
+  .visit-page .expect-list li { grid-template-columns: 26px 1fr; gap: 12px; }
+  .visit-page .pastor-welcome-copy .content-actions { display: grid; grid-template-columns: 1fr; }
+  .visit-page .pastor-welcome-copy .content-actions > a { width: 100%; }
+  .visit-page .location-cta .visit-closing-actions { flex-direction: column; }
+  .visit-closing-actions .visit-button { flex: none; }
+}
+
+.visit-page .visit-detail .visit-service-time {
+  font-size: 1.05rem;
+}

@@ -17,10 +17,10 @@ export default function VisitPage() {
     <>
       <a className="skip-link" href="#main">Skip to content</a>
       <Header />
-      <main id="main">
+      <main id="main" className="visit-page">
         <PageHero
           index="02 / 05"
-          label="I’m New"
+          label="Plan Your Visit"
           title={<>Your first Sunday<br /><em>starts here.</em></>}
           intro="Visiting a church for the first time can bring questions. Here is what you need to know about a Sunday at Anchor Church London."
         />
@@ -29,13 +29,13 @@ export default function VisitPage() {
           <div className="visit-intro reveal">
             <p className="kicker"><span /> The essentials</p>
             <h2>Come as<br /><em>you are.</em></h2>
-            <p>You are welcome to come without registering. We would be glad to welcome you and your family.</p><p>{church.parking} {church.floor}</p>
+            <p>You are welcome to come without registering. We would be glad to welcome you and your family.</p>
           </div>
           <div className="visit-detail-grid">
-            <article className="visit-detail reveal"><span>01</span><h3>Sunday Worship</h3><p>{church.service} Our service lasts 1 hour and 45 minutes.</p></article>
-            <article className="visit-detail reveal"><span>02</span><h3>Our Location</h3><p>{church.venue}<br />{church.street}<br />{church.city}</p><a href={church.mapUrl} target="_blank" rel="noreferrer">Get directions ↗</a></article>
-            <article className="visit-detail reveal"><span>03</span><h3>What to Expect</h3><p>A warm welcome, worship centred on Jesus, prayer, Bible teaching, and time together as a church family.</p></article>
-            <article className="visit-detail reveal"><span>04</span><h3>Have a Question?</h3><p>If there is anything that would help you feel prepared, send us an email before Sunday.</p><a href="mailto:anchorchurchlc1@gmail.com">Email the church ↗</a></article>
+            <article className="visit-detail reveal"><h3>Sunday Worship</h3><p className="visit-service-time">{church.service.replaceAll(" a.m.", "\u00a0a.m.").replaceAll(" p.m.", "\u00a0p.m.")}</p><p>Our service lasts 1 hour and 45 minutes.</p></article>
+            <article className="visit-detail reveal"><h3>Our Location</h3><p><strong>{church.venue}</strong><br />{church.street}<br />{church.city}</p><a className="visit-button" href={church.mapUrl} target="_blank" rel="noreferrer">Get Directions ↗</a></article>
+            <article className="visit-detail reveal"><h3>What to Expect</h3><p>A warm welcome, worship centred on Jesus, prayer, Bible teaching, and time together as a church family.</p></article>
+            <article className="visit-detail reveal"><h3>Have a Question?</h3><p>If there is anything that would help you feel prepared, send us an email before Sunday.</p><a className="visit-button visit-button-outline" href="mailto:anchorchurchlc1@gmail.com">Email the Church ↗</a></article>
           </div>
         </section>
 
@@ -64,8 +64,8 @@ export default function VisitPage() {
               <p>Join us on Sundays from 10:45 a.m. to 12:30 p.m. at East West Event Centre, 530 Clarke Road, Unit #1, London, Ontario N5V 2C7. Parking is available at the rear of the building, and we meet on the first floor.</p>
               <p>We gather to sing, pray, and learn from the Bible. After the service, please introduce yourself and spend some time with us. I look forward to welcoming you.</p>
               <p className="pastor-welcome-signature">Pastor Sudhir Basumatary</p>
-              <div className="content-actions"><a className="cnbc-button" href={enquiryEmail("Plan Your Visit")}>Let Us Know You’re Coming</a><a className="cnbc-text-link" href={church.mapUrl} target="_blank" rel="noreferrer">Get Directions ↗</a></div>
-              <p className="enquiry-note">The visit link opens your email app. You are welcome to come without sending an enquiry.</p>
+              <div className="content-actions"><a className="cnbc-button" href={enquiryEmail("Plan Your Visit")}>Email a Visit Enquiry</a><a className="visit-button visit-button-outline" href={church.mapUrl} target="_blank" rel="noreferrer">Get Directions ↗</a></div>
+              <p className="enquiry-note">The enquiry button opens your email app. Review your message and press Send there. You are welcome to come without sending an enquiry.</p>
             </div>
           </div>
         </section>
@@ -86,8 +86,8 @@ export default function VisitPage() {
         </section>
 
         <section className="location-cta page-shell reveal">
-          <div><p className="kicker"><span /> Find us</p><h2>{church.venue}<br /><em>{church.street}</em></h2></div>
-          <div><a className="button button-dark" href={church.mapUrl} target="_blank" rel="noreferrer">Open directions <span aria-hidden="true">↗</span></a><Link className="text-link" href="/contact">Contact us <span aria-hidden="true">→</span></Link></div>
+          <div><p className="kicker"><span /> Find us</p><h2>{church.venue}</h2><p className="visit-closing-time">{church.service.replaceAll(" a.m.", "\u00a0a.m.").replaceAll(" p.m.", "\u00a0p.m.")}</p><address>{church.street}<br />{church.city}</address></div>
+          <div className="visit-closing-actions"><a className="visit-button" href={church.mapUrl} target="_blank" rel="noreferrer">Get Directions <span aria-hidden="true">↗</span></a><Link className="visit-button visit-button-outline" href="/contact">Contact Us <span aria-hidden="true">→</span></Link></div>
         </section>
       </main>
       <Footer />
