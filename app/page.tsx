@@ -76,9 +76,9 @@ export default function Home() {
           <div className="pastor-welcome-shape" aria-hidden="true" />
           <div className="page-shell pastor-welcome-grid">
             <div className="pastor-welcome-heading home-pastor-heading">
-              <div className="home-pastor-portrait" data-motion="rise"><Image src={assetPath("/images/pastor-sudhir.jpg")} alt="Pastor Sudhir Basumatary, Founder and Lead Pastor of Anchor Church London" fill sizes="(max-width: 820px) 200px, 240px" /></div>
+              <div className="home-pastor-portrait home-pastor-family" data-motion="rise"><Image src={assetPath("/images/pastor-sudhir-family.jpeg")} alt="Pastor Sudhir Basumatary with his family" fill sizes="(max-width: 820px) 260px, 300px" /></div>
               <p>A welcome from</p>
-              <h2 id="pastor-welcome-title">Pastor Sudhir</h2>
+              <h2 id="pastor-welcome-title">Pastor Sudhir<small className="pastor-family-label">and family</small></h2>
               <span>Founder and Lead Pastor</span>
             </div>
             <div className="pastor-welcome-copy" data-motion="rise">
