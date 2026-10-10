@@ -31,7 +31,7 @@ export default function ContactComposer() {
         <span>How can we help?</span>
         <textarea name="message" rows={6} required />
       </label>
-      <button className="button button-dark" type="submit">Open email message <span aria-hidden="true">↗</span></button>
+      <button className="button button-dark" type="submit">Open Email Message <span aria-hidden="true">↗</span></button>
       <p className="form-status" aria-live="polite">{status}</p>
     </form>
   );
