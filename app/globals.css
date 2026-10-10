@@ -1642,3 +1642,15 @@ h1,h2,h3 { text-wrap: balance; }
   .beliefs-page .content-actions { flex-direction: column; }
   .beliefs-page .belief-button { width: 100%; }
 }
+
+/* Mission and Partnerships: clear paragraphs and a consistent outreach action. */
+.about-page .about-partnerships .content-columns { align-items: start; }
+.about-page .about-partnerships .content-columns h3 { margin: 0 0 14px; }
+.about-page .about-partnerships .content-columns p { margin: 0 0 20px; font-size: 1.1rem; line-height: 1.75; }
+.about-page .about-partnerships .content-actions { gap: 16px 24px; margin-top: 24px; }
+.about-page .about-partnerships .outreach-button { display: inline-flex; align-items: center; justify-content: center; min-height: 56px; max-width: 100%; margin-top: 4px; padding: 16px 22px; border: 2px solid var(--navy); border-radius: 6px; background: var(--navy); color: #fff; font-size: 1rem; font-weight: 750; line-height: 1.35; letter-spacing: .015em; text-transform: none; text-decoration: none; text-align: center; }
+.about-page .about-partnerships .outreach-button:hover { background: #263d6b; border-color: #263d6b; }
+.about-page .about-partnerships .outreach-button:focus-visible { outline: 3px solid var(--orange); outline-offset: 4px; }
+@media (max-width: 600px) {
+  .about-page .about-partnerships .outreach-button { width: 100%; }
+}

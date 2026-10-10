@@ -79,10 +79,10 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
-        <section className="content-section page-shell" aria-labelledby="partnerships">
+        <section className="content-section page-shell about-partnerships" aria-labelledby="partnerships">
           <p className="kicker"><span /> Mission and partnerships</p><h2 id="partnerships">Sharing the hope of Jesus</h2>
           <div className="content-columns">
-            <div><p>Our mission begins with the people God has placed around us. We want to listen well, care for practical needs, and speak about Jesus with humility and clarity. We also value cooperation with other churches so that the gospel reaches beyond our own congregation.</p><p>We invite our church family to pray for people who do not yet know Jesus, learn to share their faith, and explore opportunities to serve locally and beyond.</p><Link className="cnbc-text-link" href="/next-steps#serving">Ask About Mission and Outreach →</Link></div>
+            <div><p>Our mission begins with the people God has placed around us. We want to listen well, care for practical needs, and speak about Jesus with humility and clarity. We also value cooperation with other churches so that the gospel reaches beyond our own congregation.</p><p>We invite our church family to pray for people who do not yet know Jesus, learn to share their faith, and explore opportunities to serve locally and beyond.</p><Link className="outreach-button" href="/next-steps#serving">Ask About Mission and Outreach</Link></div>
             <div><h3 id="affiliations-heading">Our affiliations</h3><p>Anchor Church London is affiliated with the organizations below.</p><p>We value these relationships as we grow in discipleship, serve others, and share the good news of Jesus.</p><p>Learn more about discipleship and cooperative mission through CNBC, and explore NAMB’s resources for evangelism, church planting, and compassionate ministry, including Send Network and Send Relief.</p><div className="content-actions"><a className="cnbc-text-link" href="https://www.cnbc.ca/" target="_blank" rel="noreferrer">Explore CNBC ↗</a><a className="cnbc-text-link" href="https://www.namb.net/" target="_blank" rel="noreferrer">Explore NAMB ↗</a></div></div>
           </div>
           <ul className="affiliation-logos" aria-labelledby="affiliations-heading">
@@ -91,7 +91,7 @@ export default function AboutPage() {
               { name: "Canadian National Baptist Convention", logo: "cnbc.png", href: "https://www.cnbc.ca/", dark: true },
               { name: "North American Mission Board", logo: "namb.svg", href: "https://www.namb.net/", dark: true },
               { name: "Gospel Trend Church", logo: "gospel-trend.png", href: "https://www.gospeltrendlondon.org/", dark: false },
-              { name: "CPMI", logo: "cpmi.jpg", href: "https://churchplanting.ca/", dark: false },
+              { name: "Church Planting Ministries Inc.", logo: "cpmi.jpg", href: "https://churchplanting.ca/", dark: false },
             ].map((partner) => (
               <li key={partner.name}>
                 <a className="affiliation-card" aria-label={`${partner.name} (opens in a new tab)`} href={partner.href} target="_blank" rel="noreferrer">
