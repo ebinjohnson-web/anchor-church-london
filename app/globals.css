@@ -1587,3 +1587,36 @@ h1,h2,h3 { text-wrap: balance; }
   .events-page .content-actions { flex-direction: column; }
   .events-page .event-life-panel { padding: 22px; }
 }
+
+/* Opportunities: scannable serving areas and practical internship guidance. */
+.opportunities-page .content-section { padding-block: clamp(40px, 5vw, 64px); }
+.opportunities-page .content-section > h2 { margin: 0 0 32px; }
+.opportunities-page .content-columns { gap: clamp(32px, 5vw, 64px); align-items: start; }
+.opportunities-page .content-columns > div { min-width: 0; }
+.opportunities-page .content-columns p { margin: 0 0 20px; font-size: 1.1rem; line-height: 1.75; }
+.opportunities-page .content-columns .serving-list-intro,
+.opportunities-page .content-columns .internship-list-intro { margin-bottom: 12px; font-weight: 650; }
+.opportunities-page .serving-areas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 28px; row-gap: 10px; }
+.opportunities-page .serving-areas,
+.opportunities-page .internship-details { margin: 0 0 24px; padding-left: 22px; list-style: disc; font-size: 1.05rem; line-height: 1.65; }
+.opportunities-page .serving-areas li,
+.opportunities-page .internship-details li { padding-left: 4px; }
+.opportunities-page .internship-details li + li { margin-top: 10px; }
+.opportunities-page .internship-panel { padding: 26px; border: 1px solid var(--line-dark); border-radius: 6px; background: #eef1f6; scroll-margin-top: 110px; }
+.opportunities-page .internship-panel h3 { margin: 0 0 16px; font-size: 1.5rem; line-height: 1.3; }
+.opportunities-page .opportunity-button { display: inline-flex; align-items: center; justify-content: center; min-height: 56px; max-width: 100%; padding: 16px 22px; border: 2px solid var(--navy); border-radius: 6px; background: var(--navy); color: #fff; font-size: 1rem; font-weight: 750; line-height: 1.35; letter-spacing: .015em; text-transform: none; text-decoration: none; text-align: center; }
+.opportunities-page .opportunity-button-outline { background: transparent; color: var(--navy); }
+.opportunities-page .opportunity-button:hover { background: #263d6b; border-color: #263d6b; color: #fff; }
+.opportunities-page .opportunity-button:focus-visible { outline: 3px solid var(--orange); outline-offset: 4px; }
+.opportunities-page .content-columns .enquiry-note { margin: 16px 0 0; font-size: .95rem; line-height: 1.65; color: var(--muted); }
+.opportunities-page .opportunities-closing { margin-top: 36px; padding-top: 28px; border-top: 1px solid var(--line-dark); }
+@media (max-width: 820px) {
+  .opportunities-page .content-columns { grid-template-columns: 1fr; gap: 32px; }
+}
+@media (max-width: 600px) {
+  .opportunities-page .opportunity-button { width: 100%; }
+  .opportunities-page .internship-panel { padding: 22px; }
+}
+@media (max-width: 380px) {
+  .opportunities-page .serving-areas { grid-template-columns: 1fr; }
+}
