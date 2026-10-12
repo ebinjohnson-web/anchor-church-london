@@ -49,18 +49,20 @@ export default function ChurchIntro() {
       if (event.key === "Escape") finish();
     }
 
-    const timeout = setTimeout(finish, 2200);
-    const timing = { duration: 1800, easing: "cubic-bezier(.45,0,.55,1)", fill: "forwards" as const };
+    const timeout = setTimeout(finish, 4000);
+    const timing = { duration: 3400, easing: "cubic-bezier(.45,0,.55,1)", fill: "forwards" as const };
     try {
-      // One continuous rise with no pause at the centre.
+      // Rise into view, hold the centred logo, then lift the panel away.
       const rise = panel.animate([
-        { transform: "translateY(100%)" },
-        { transform: "translateY(-100%)" },
+        { transform: "translateY(100%)", offset: 0 },
+        { transform: "translateY(0)", offset: .25 },
+        { transform: "translateY(0)", offset: .7 },
+        { transform: "translateY(-100%)", offset: 1 },
       ], timing);
       // Keep Home covered during the rise; lift both layers together on exit.
       const reveal = backdrop.animate([
         { transform: "translateY(0)", offset: 0 },
-        { transform: "translateY(0)", offset: .5 },
+        { transform: "translateY(0)", offset: .7 },
         { transform: "translateY(-100%)", offset: 1 },
       ], timing);
       animations.push(rise, reveal);

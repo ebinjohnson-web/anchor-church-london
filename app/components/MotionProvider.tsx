@@ -76,7 +76,7 @@ export default function MotionProvider() {
     let introFallback: ReturnType<typeof setTimeout> | undefined;
     if (opening) {
       window.addEventListener("church-intro-complete", start, { once: true });
-      introFallback = setTimeout(start, 3200);
+      introFallback = setTimeout(start, 4200);
     } else {
       start();
     }
