@@ -6,6 +6,7 @@ import Link from "next/link";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import MissionTicker from "./components/MissionTicker";
+import ChurchIntro from "./components/ChurchIntro";
 import { assetPath } from "./lib/assets";
 
 export const metadata: Metadata = {
@@ -46,6 +47,7 @@ const interests: Array<{ href: string; icon: IconName; title: string; copy: stri
 export default function Home() {
   return (
     <>
+      <ChurchIntro />
       <a className="skip-link" href="#main">Skip to content</a>
       <Header />
       <main id="main" className="cnbc-home">
