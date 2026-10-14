@@ -1,5 +1,7 @@
 "use client";
 
+import AnniversaryBanner from "./AnniversaryBanner";
+
 import { church } from "../lib/church";
 import Link from "next/link";
 import Image from "next/image";
@@ -112,6 +114,7 @@ export default function Header() {
         <Link className="header-cta" href="/visit" onClick={closeNavigation}>Plan Your Visit <span aria-hidden="true">→</span></Link>
         <button ref={menuRef} className={`menu-toggle${open ? " is-open" : ""}`} type="button" aria-label={open ? "Close navigation" : "Open navigation"} aria-expanded={open} aria-controls="mobile-navigation" onClick={() => { setOpen(!open); setExpanded(null); }}><span /><span /></button>
       </div>
+      <AnniversaryBanner onNavigate={closeNavigation} />
       <div id="mobile-navigation" className={`mobile-menu${open ? " is-open" : ""}`} inert={!open}>
         <nav aria-label="Mobile navigation">{navigation("mobile")}</nav>
         <div className="mobile-menu-footer">
