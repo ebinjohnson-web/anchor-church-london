@@ -4,7 +4,7 @@ export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://anchorchurchlondonca.com";
-  const routes = ["", "/about", "/visit", "/ministries", "/church-life", "/contact", "/next-steps", "/opportunities", "/give", "/beliefs", "/prayer-care", "/messages", "/events", "/our-story"];
+  const routes = ["", "/about", "/meet-our-team", "/visit", "/ministries", "/church-life", "/contact", "/next-steps", "/opportunities", "/give", "/beliefs", "/prayer-care", "/messages", "/events", "/our-story"];
 
   return routes.map((route) => ({
     url: `${baseUrl}${route}`,

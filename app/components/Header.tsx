@@ -13,6 +13,7 @@ const navItems: NavItem[] = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About", children: [
     { label: "Our Story and Leadership", href: "/about#our-story" },
+    { label: "Meet Our Team", href: "/meet-our-team" },
     { label: "Our Journey of Faith", href: "/our-story" },
     { label: "What We Believe", href: "/beliefs" },
     { label: "Mission and Partnerships", href: "/about#partnerships" },

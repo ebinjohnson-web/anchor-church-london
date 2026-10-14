@@ -1990,3 +1990,12 @@ h1,h2,h3 { text-wrap: balance; }
 @media (max-width: 900px) { .church-family-photo-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 820px) { .church-life-revised .church-family-intro { grid-template-columns: 1fr; gap: 22px; } }
 @media (max-width: 700px) { .church-family-card-grid { grid-template-columns: 1fr; gap: 20px; } .church-family-card-body { padding: 24px; } .church-family-card-body .church-life-button { width: 100%; } .church-family-photo-gallery { gap: 10px; } }
+
+/* Meet Our Team: shared ministry and forthcoming profiles */
+.meet-team-page .meet-team-intro { padding-block: clamp(40px, 6vw, 76px); }
+.meet-team-page .meet-team-intro > div:first-child { max-width: 800px; }
+.meet-team-page .meet-team-intro > div:first-child p { font-size: 1.15rem; line-height: 1.85; margin: 0; }
+.meet-team-page .meet-team-coming-soon { max-width: 900px; margin-top: 36px; padding: clamp(24px, 4vw, 40px); border: 1px solid #dce2ec; border-left: 4px solid #59c9df; border-radius: 12px; background: #f4f6fa; }
+.meet-team-page .meet-team-coming-soon h2 { color: #243a7f; font-size: clamp(1.5rem, 3vw, 2.2rem); line-height: 1.2; margin: 0 0 18px; }
+.meet-team-page .meet-team-coming-soon > p:last-child { font-size: 1.05rem; line-height: 1.75; margin: 0; }
+.meet-team-page .page-hero-intro { font-style: italic; }
