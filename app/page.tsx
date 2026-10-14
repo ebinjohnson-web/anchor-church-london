@@ -14,6 +14,16 @@ export const metadata: Metadata = {
   description: "Discover Anchor Church London, a Christian church family in London, Ontario. Learn about Sunday worship, explore faith, and plan your first visit.",
 };
 
+function ServiceDetailIcon({ name }: { name: "calendar" | "location" | "parking" }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      {name === "calendar" && <><rect x="3" y="5" width="18" height="16" rx="2" /><path d="M16 3v4M8 3v4M3 11h18M8 15h.01M12 15h.01M16 15h.01M8 18h.01M12 18h.01" /></>}
+      {name === "location" && <><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z" /><circle cx="12" cy="10" r="2.5" /></>}
+      {name === "parking" && <><path d="m5 8 2-4h10l2 4M3 12l2-4h14l2 4v6H3v-6ZM3 12h18M6 18v3M18 18v3M6 15h2M16 15h2" /></>}
+    </svg>
+  );
+}
+
 type IconName = "visit" | "baptism" | "prayer" | "bible" | "family" | "connect";
 
 function InterestIcon({ name }: { name: IconName }) {
@@ -80,12 +90,17 @@ export default function Home() {
               <div className="home-pastor-portrait home-pastor-family" data-motion="rise"><Image src={assetPath("/images/pastor-sudhir-family.jpeg")} alt="Pastor Sudhir Basumatary with his family" fill sizes="(max-width: 820px) 260px, 300px" /></div>
             <div className="pastor-welcome-heading home-pastor-heading">
               <p>A welcome from</p>
-              <h2 id="pastor-welcome-title">Pastor Sudhir<small className="pastor-family-label">and family</small></h2>
-              <span>Founder and Lead Pastor</span>
+              <h2 id="pastor-welcome-title">Pastor Sudhir<small className="pastor-family-label">&amp; family</small></h2>
             </div>
             <div className="pastor-welcome-copy" data-motion="rise">
-              <p>Welcome to Anchor Church London. My prayer is that you will discover the hope of Jesus and find a church family where you can grow in faith and build meaningful friendships. Whether you are exploring faith or looking for a church home, your questions are welcome. Join us this Sunday—I look forward to meeting you.</p>
-              <p className="pastor-welcome-signature">Pastor Sudhir Basumatary</p>
+              <p>Welcome to Anchor Church London!</p>
+              <p>Our heart is to build a Christ-centred church where individuals and families can discover God&apos;s love, grow in biblical faith, and build meaningful relationships.</p>
+              <p>We believe faith is not only something we profess but something we live—through understanding God&apos;s Word, asking meaningful questions, growing together, and actively participating in God&apos;s Kingdom.</p>
+              <p>Whether you are exploring Christianity or looking for a church family, there is a place for you here.</p>
+              <p>My family and I warmly invite you to join us this Sunday. We look forward to meeting you!</p>
+              <p>With love and blessings,</p>
+              <p className="pastor-welcome-signature"><strong><em>Pastor Sudhir &amp; Family</em></strong></p>
+              <p><strong>Lead Pastor, Anchor Church London</strong></p>
             </div>
           </div>
         </section>
@@ -109,15 +124,25 @@ export default function Home() {
 
         <MissionTicker />
 
-        <section className="mission-section">
+        <section className="mission-section home-service-closing">
           <div className="mission-shape mission-shape-one" aria-hidden="true" />
           <div className="mission-shape mission-shape-two" aria-hidden="true" />
           <div className="mission-content">
-            <h2>Come as you are.<strong>Join us this Sunday.</strong></h2>
-            <div className="home-service-details">
-              <p className="home-service-time">{church.service}</p>
-              <p className="home-service-address"><strong>{church.venue}</strong><br />{church.street}<br />{church.city}</p>
-              <p className="home-service-parking">{church.parking} We look forward to meeting you.</p>
+            <h2>Come as You Are.<strong>There&apos;s a Place for You Here.</strong></h2>
+            <p className="home-closing-intro">Join us for worship, biblical teaching, and meaningful fellowship.</p>
+            <div className="home-service-details" data-motion="rise">
+              <div className="home-service-row">
+                <ServiceDetailIcon name="calendar" />
+                <div><h3>Sunday Worship Service</h3><p>10:45&nbsp;a.m. – 12:30&nbsp;p.m.</p></div>
+              </div>
+              <div className="home-service-row">
+                <ServiceDetailIcon name="location" />
+                <div><h3>{church.venue}</h3><p>530 Clarke Road, Unit 1<br />{church.city}</p></div>
+              </div>
+              <div className="home-service-row">
+                <ServiceDetailIcon name="parking" />
+                <div><h3>Parking</h3><p>Available at the rear of the building</p></div>
+              </div>
             </div>
             <div className="home-welcome-buttons home-closing-buttons" data-motion="rise">
               <Link className="home-visit-button" href="/visit">Plan Your Visit <span aria-hidden="true">→</span></Link>

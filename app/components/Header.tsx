@@ -13,6 +13,7 @@ const navItems: NavItem[] = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About", children: [
     { label: "Our Story and Leadership", href: "/about#our-story" },
+    { label: "Our Journey of Faith", href: "/our-story" },
     { label: "What We Believe", href: "/beliefs" },
     { label: "Mission and Partnerships", href: "/about#partnerships" },
   ] },
@@ -22,12 +23,11 @@ const navItems: NavItem[] = [
     { label: "Membership", href: "/next-steps#membership" },
     { label: "Groups", href: "/next-steps#groups" },
     { label: "Serve", href: "/next-steps#serving" },
-    { label: "Opportunities and Internships", href: "/opportunities" },
   ] },
   { href: "/church-life", label: "Church Life", children: [
     { label: "Ministries", href: "/ministries" },
     { label: "Prayer and Care", href: "/prayer-care" },
-    { label: "Messages", href: "/messages" },
+    { label: "Sermons & Messages", href: "/messages" },
     { label: "Events and Stories", href: "/events" },
   ] },
   { href: "/give", label: "Give" },
