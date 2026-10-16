@@ -14,7 +14,7 @@ export default function ContactComposer() {
     const subject = encodeURIComponent(`Website enquiry from ${name || "a visitor"}`);
     const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
     setStatus("Your email app is opening. If it does not open, use the email address shown on this page.");
-    window.location.href = `mailto:anchorchurchlc1@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:contactanchorchurch@gmail.com?subject=${subject}&body=${body}`;
   }
 
   return (

@@ -35,7 +35,7 @@ export default function VisitPage() {
             <article className="visit-detail reveal"><h3>Sunday Worship</h3><p className="visit-service-time">{church.service.replaceAll(" a.m.", "\u00a0a.m.").replaceAll(" p.m.", "\u00a0p.m.")}</p><p>Our service lasts 1 hour and 45 minutes.</p></article>
             <article className="visit-detail reveal"><h3>Our Location</h3><p><strong>{church.venue}</strong><br />{church.street}<br />{church.city}</p><a className="visit-button" href={church.mapUrl} target="_blank" rel="noreferrer">Get Directions ↗</a></article>
             <article className="visit-detail reveal"><h3>What to Expect</h3><p>A warm welcome, worship centred on Jesus, prayer, Bible teaching, and time together as a church family.</p></article>
-            <article className="visit-detail reveal"><h3>Have a Question?</h3><p>If there is anything that would help you feel prepared, send us an email before Sunday.</p><a className="visit-button visit-button-outline" href="mailto:anchorchurchlc1@gmail.com">Email the Church ↗</a></article>
+            <article className="visit-detail reveal"><h3>Have a Question?</h3><p>If there is anything that would help you feel prepared, send us an email before Sunday.</p><a className="visit-button visit-button-outline" href="mailto:contactanchorchurch@gmail.com">Email the Church ↗</a></article>
           </div>
         </section>
 

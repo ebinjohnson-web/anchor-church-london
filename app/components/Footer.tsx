@@ -43,8 +43,8 @@ export default function Footer() {
             {church.venue}<br />{church.street}<br />{church.city}
           </a>
 
-          <a href="mailto:anchorchurchlc1@gmail.com">
-            anchorchurchlc1@gmail.com
+          <a href="mailto:contactanchorchurch@gmail.com">
+            contactanchorchurch@gmail.com
           </a>
         </div>
       </div>

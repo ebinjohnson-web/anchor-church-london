@@ -1,6 +1,6 @@
 // Confirmed church details from the supplied implementation brief.
 export const church = {
-  email: "anchorchurchlc1@gmail.com",
+  email: "contactanchorchurch@gmail.com",
   venue: "East West Event Centre",
   street: "530 Clarke Road, Unit #1",
   city: "London, Ontario N5V 2C7",
